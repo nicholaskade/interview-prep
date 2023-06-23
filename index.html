@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width">
+  <title>replit</title>
+  <link href="style.css" rel="stylesheet" type="text/css" />
+</head>
+
+<body>
+  Hello world
+  <script src="script.js"></script>
+  <script src="answers.js"></script>
+  <script src="data.js"></script>
+
+  <table id="results"></table>
+
+  <script>
+    const tests = [
+      "hasUniqueCharacters(\"foo\")",
+      "hasUniqueCharacters(\"bar\")",
+      "urlify(\"\")",
+      "urlify(\"taylor swift\")",
+      "urlify(\"taylor swift's reputation\")",
+      "lefty(\"\")",
+      "lefty(\"answer\")",
+      "lefty(\"undo\")",
+      "divisible([], 13)",
+      "divisible([1], 13)",
+      "divisible([1, 26, 9], 13)",
+      "funkyNumbers([])",
+      "funkyNumbers([0])",
+      "funkyNumbers([1])",
+      "funkyNumbers([2])",
+      "funkyNumbers([0, 0])",
+      "funkyNumbers([0, 1, 2, 0])",
+      "middleNames([])",
+      "middleNames(employeeList)",
+      "employeesByMonth([])",
+      "employeesByMonth(employeeList)",
+      "otherDepartments([])",
+      "otherDepartments(employeeList, \"Dodgeball\")",
+      "otherDepartments(employeeList, \"Art\")",
+      "decreasedFunding([])",
+      "decreasedFunding(employeeList, \"Dodgeball\")",
+      "decreasedFunding(employeeList, \"Art\")",
+    ];
+
+    const table = document.getElementById('results');
+
+    for (var i = 0; i < tests.length; i++) {
+      const test = tests[i];
+      const answer = eval(test);
+      const golden = eval("answer_" + test);
+      console.log(golden);
+
+      var row = document.createElement('tr');
+
+      var testDescription = document.createElement('td');
+      testDescription.innerHTML = test;
+      row.appendChild(testDescription);
+
+      var testResult = document.createElement('td');
+      testResult.innerHTML = (answer === undefined ? "Not answered" : (JSON.stringify(answer) == JSON.stringify(golden) ? "True" : "False"));
+      row.appendChild(testResult);
+
+      var expected = document.createElement('td');
+      expected.innerHTML = JSON.stringify(golden);
+      row.appendChild(expected);
+
+      var actual = document.createElement('td');
+      actual.innerHTML = JSON.stringify(answer);
+      row.appendChild(actual);
+
+      table.appendChild(row);
+    }
+  </script>
+</body>
+
+</html>
