@@ -13,6 +13,9 @@
   <script src="problems_1.js"></script>
   <script src="answers_1.js"></script>
 
+  <script src="problems_2.js"></script>
+  <script src="answers_2.js"></script>
+
   <table id="results"></table>
 
   <script>
@@ -47,7 +50,28 @@
     ];
 
     const tests_2 = [
-
+      "bonusVowel(\"\")",
+      "bonusVowel(\"a\")",
+      "bonusVowel(\"f\")",
+      "bonusVowel(\"anime\")",
+      "bonusVowel(\"cookie\")",
+      "isBamboozled([], 10)",
+      "isBamboozled([21, 56, 37], 30)",
+      "isBamboozled([21, 56, 37], 55)",
+      "isAwkwardPalindrome(\"\", \"a\")",
+      "isAwkwardPalindrome(\"poop\", \"l\")",
+      "isAwkwardPalindrome(\"rakcecakr\", \"k\")",
+      "isAwkwardPalindrome(\"appke\", \"k\")",
+      "taylorify([])",
+      "taylorify([1, 2, 3, 4, 5])",
+      "risers([[1, 2, 3], [4, 5, 6]])",
+      "landscape([], 2)",
+      "landscape(JSON.parse(JSON.stringify(numbers)), 3)",
+      "landscape(JSON.parse(JSON.stringify(numbers)), 10)",
+      "johnGoesInsane([], 2, 2)",
+      "johnGoesInsane(JSON.parse(JSON.stringify(numbers)), 2, 2)",
+      "johnGoesInsane(JSON.parse(JSON.stringify(numbers)), 10, 2)",
+      "johnGoesInsane(JSON.parse(JSON.stringify(numbers)), 2, 10)"
     ];
 
     const tests = tests_1;
@@ -58,12 +82,11 @@
       const test = tests[i];
       const answer = eval(test);
       const golden = eval("answer_" + test);
-      console.log(golden);
 
       var row = document.createElement('tr');
 
       var testDescription = document.createElement('td');
-      testDescription.innerHTML = test;
+      testDescription.innerHTML = test.replace("JSON.parse(", "").replace("JSON.stringify(", "").replace("))", "");
       row.appendChild(testDescription);
 
       var testResult = document.createElement('td');

@@ -78,7 +78,7 @@ function answer_funkyNumbers(lst) {
         if (num % 2 == 1 && num != 0) {
             results.push(num * 3);
         } else if (num % 2 == 0 && num != 0) {
-            results.push(num * 3);
+            results.push(num / 2);
         } else {
             results[results.length - 1] = 13;
             results.push(100);
