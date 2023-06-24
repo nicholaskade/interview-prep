@@ -4,20 +4,19 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width">
-  <title>replit</title>
   <link href="style.css" rel="stylesheet" type="text/css" />
 </head>
 
 <body>
-  Hello world
-  <script src="script.js"></script>
-  <script src="answers.js"></script>
   <script src="data.js"></script>
+
+  <script src="problems_1.js"></script>
+  <script src="answers_1.js"></script>
 
   <table id="results"></table>
 
   <script>
-    const tests = [
+    const tests_1 = [
       "hasUniqueCharacters(\"foo\")",
       "hasUniqueCharacters(\"bar\")",
       "urlify(\"\")",
@@ -46,6 +45,12 @@
       "decreasedFunding(employeeList, \"Dodgeball\")",
       "decreasedFunding(employeeList, \"Art\")",
     ];
+
+    const tests_2 = [
+
+    ];
+
+    const tests = tests_1;
 
     const table = document.getElementById('results');
 
